@@ -34,9 +34,39 @@ body > div{
 }
 </style>
 
-<div>
-You got:  4
-&#9859;
-Computer got:  5
-&#9860;
-YOU LOST!!.
+#!/usr/bin/python3
+print("Content-type: text/html \n")
+import magicwand
+
+import random 
+
+player = random.randint(1,6)
+computer = random.randint(1,6)
+
+def dice(num):
+    if (num == 1) :
+        print("&#9856;")
+    elif (num == 2) :
+        print("&#9857;")
+    elif (num == 3) :
+        print("&#9858;")
+    elif (num == 4) :
+        print("&#9859;")
+    elif (num == 5) :
+        print("&#9860;")
+    else:
+        print("&#9861;")
+        
+print("You got: ", player)
+dice(player)
+
+print("Computer got: ", computer)
+dice(computer)
+
+
+if player > computer: 
+    print("Congratulations! You Won.")
+elif player == computer:
+    print("It's a draw")
+else: 
+    print("YOU LOST!!.")
