@@ -34,14 +34,31 @@ body > div{
 }
 </style>
 
-<div>
-Race 1
+#!/usr/bin/python3
+print("Content-type: text/html \n")
+import magicwand
+import random 
 
-&#128663; _________________
-&#127950; ____________________
-You got beat by 3 lengths
 
-Race 2
-&#128663; _________________________
-&#127950; __________________
-You're a winner by 7 lengths!
+def race(track, player_car, computer_car): 
+    player = random.randint(15,30)
+    computer = random.randint(15,30)
+    
+    print(player_car, track*player)
+    print(computer_car, track*computer)
+ 
+    if player > computer: 
+        print(F"You're a winner by {player - computer} lengths!") 
+    elif player == computer:
+        print("Draw, got the same lengths")
+    else: 
+        print(F"You got beat by {computer - player} lengths")
+
+
+print("Race 1")
+print()
+race("_", "&#128663;", "&#127950;")
+
+print()
+print("Race 2")
+race("_", "&#128663;", "&#127950;")
